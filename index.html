@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>DrivenEats</title>
+</head>
+<body>
+
+    <div id="confirmar-pedido">
+
+        <div id="box-confirmacao">
+            <div class="topo">
+                <h1>Confirme seu pedido</h1>
+            </div>
+            <div class="itens">
+                <div class="itens-escolhidos">
+                    <p class="item1">item 1</p>
+                    <p class="item2">item 2</p>
+                    <p class="item3">item 3</p>
+                    <p style="font-weight: bold;">TOTAL</p>
+                </div>
+                <div class="preco-itens">
+                    <p class="preco1">preco 1</p>
+                    <p class="preco2">preco 2</p>
+                    <p class="preco3">preco 3</p>
+                    <p class="preco-total"><strong>preco total</strong></p>
+                </div>
+            </div>
+            <div class="botoes">
+                <button class="confirmado"><p>Tudo certo, pode pedir!</p></button>
+                <button class="cancelar" onclick="Cancelar()"><P>Cancelar</P></button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <header id="topo">
+        <h1>DrivenEats</h1>
+        <p>Sua comida em 6 minutos</p>
+    </header>
+
+    <main>
+        <section class="secao-escolha">
+            <header>
+                <h1>Primeiro, seu prato</h1>
+            </header>
+            <div class="opcoes">
+                <div id="hamburguer" class="opcao" onclick="EscolherHamburguer()">
+                    <img src="imagens/hamburguer.jpg" alt="Hamburguer">
+                    <h1>Hamburguer</h1>
+                    <p>Com crispy de cebola e salada</p>
+                    <h2>R$ 20,00</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div id="pizza" class="opcao" onclick="EscolherPizza()">
+                    <img src="imagens/pizza.jpg" alt="Pizza">
+                    <h1>Pizza</h1>
+                    <p>Pizza deliciosa sabor calabresa</p>
+                    <h2>R$ 32,50</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+
+                </div>
+
+                <div id="frango" class="opcao" onclick="EscolherFrango()">
+                    <img src="imagens/frango.png" alt="Frango">
+                    <h1>Frango Yin Yang</h1>
+                    <p>Um pouco de batata, um pouco de salada</p>
+                    <h2>R$ 14,90</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-escolha">
+            <header>
+                <h1>Agora, sua bebida</h1>
+            </header>
+            <div class="opcoes">
+                <div id="coca" class="opcao" onclick="EscolherCoca()">
+                    <img src="imagens/coca.png" alt="Coca-cola">
+                    <h1>Coquinha gelada</h1>
+                    <p>Lata 350ml</p>
+                    <br>
+                    <h2>R$ 5,00</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div id="guarana" class="opcao" onclick="EscolherGuarana()">
+                    <img src="imagens/guarana.jpg" alt="Guaraná">
+                    <h1>Guaraná</h1>
+                    <p>O sabor do Brasil</p>
+                    <br>
+                    <h2>R$ 4,90</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div id="pepsi" class="opcao" onclick="EscolherPepsi()">
+                    <img src="imagens/pepsi.jpg" alt="Pepsi">
+                    <h1>Pepsi</h1>
+                    <p>Só tem pepsi, pode ser?</p>
+                    <h2>R$ 4,50</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao-escolha">
+            <header>
+                <h1>Por fim, sua sobremesa</h1>
+            </header>
+            <div class="opcoes">
+                <div id="pudim" class="opcao" onclick="EscolherPudim()">
+                    <img src="imagens/pudim.png" alt="Pudim">
+                    <h1>Pudim</h1>
+                    <p>De leite consensado</p>
+                    <h2>R$ 7,90</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div id="sundae" class="opcao" onclick="EscolherSundae()">
+                    <img src="imagens/Sundae.png" alt="">
+                    <h1>Sundae</h1>
+                    <p>3 sabores</p>
+                    <h2>R$ 9,90</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+
+                <div id="torta" class="opcao" onclick="EscolherTorta()">
+                    <img src="imagens/torta.jpg" alt="Torta de Limão">
+                    <h1>Torta de limão</h1>
+                    <p>Uma fatia</p>
+                    <h2>R$ 12,50</h2>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="desabilitado"><p>Selecione os 3 itens para fechar o pedido</p></div>
+        <button id="habilitado" onclick="Confirmar()"><p>Fechar pedido</p></button>
+    </footer>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
