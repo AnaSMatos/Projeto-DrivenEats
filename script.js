@@ -2,9 +2,10 @@ let prato;
 let bebida;
 let sobremesa;
 
-let precoPrato;
-let precoBebida;
-let precoSobremesa;
+let precoPrato = 0;
+let precoBebida = 0;
+let precoSobremesa = 0;
+let valorTotal;
 
 
 //botao finalizar
@@ -16,191 +17,90 @@ function finalizar(){
     }
 }
 
+//Selecionar
+
 //Pratos
 
-function EscolherHamburguer(){
-    //selecionar
-    let icone = document.querySelector("#hamburguer");
-    icone.classList.add("selecionado");
-    //tirar selecao das outras opcoes
-    icone = document.querySelector("#pizza");
-    icone.classList.remove("selecionado");
-    icone = document.querySelector("#frango");
-    icone.classList.remove("selecionado");
-    //add nome do prato
-    prato = "Hamburguer";
-    //add preço do prato
-    precoPrato = 20.00;
-
-    finalizar();
-}
-
-function EscolherPizza(){
-    //selecionar
-    let icone = document.querySelector("#pizza");
-    icone.classList.add("selecionado");
-    //tirar selecao das outras opcoes
-    icone = document.querySelector("#hamburguer");
-    icone.classList.remove("selecionado");
-    icone = document.querySelector("#frango");
-    icone.classList.remove("selecionado");
-    //add nome do prato
-    prato = "Pizza";
-    //add preço do prato
-    precoPrato = 32.50;
-
-    finalizar();
-}
-
-function EscolherFrango(){
-    //selecionar
-    let icone = document.querySelector("#frango");
-    icone.classList.add("selecionado");
-    //tirar selecao das outras opcoes
-    icone = document.querySelector("#pizza");
-    icone.classList.remove("selecionado");
-    icone = document.querySelector("#hamburguer");
-    icone.classList.remove("selecionado");
-    //add nome do prato
-    prato = "Frango Yin Yang"
-    //add preço do prato
-    precoPrato = 14.90
-
+function selecionarPrato(classePrato, nomePrato, preco){
+    //retirar caso haja algum
+    const selecionado = document.querySelector(".prato .selecionado");
+    if(selecionado !== null) { 
+        selecionado.classList.remove("selecionado");
+    }
+    //variaveis
+    prato = nomePrato;
+    precoPrato = preco;
+    //adicionar estilo
+    const selecionar = document.querySelector("#" + classePrato);
+    selecionar.classList.add("selecionado");
+    //mudar innerhtml caixa de confirmação
+    const item1 = document.querySelector(".item1");
+    item1.innerHTML = nomePrato;
+    const preco1 = document.querySelector(".preco1");
+    preco1.innerHTML = "R$" + (preco.toFixed(2));
     finalizar();
 }
 
 //Bebidas
 
-function EscolherCoca(){
-    //selecionar
-    document.getElementById("coca").style.border = "5px solid #32B72F";
-    let icone = document.querySelector("#coca")
-    icone.classList.add("selecionado")
-    //tirar selecao das outras opcoes
-    document.getElementById("guarana").style.border = "5px solid white";
-    icone = document.querySelector("#guarana")
-    icone.classList.remove("selecionado")
-    document.getElementById("pepsi").style.border = "5px solid white";
-    icone = document.querySelector("#pepsi")
-    icone.classList.remove("selecionado")
-    //add nome do prato
-    bebida = "Coquinha gelada"
-    //add preço do prato
-    precoBebida = 5.00
-
+function selecionarBebida(classeBebida, nomeBebida, preco){
+    //retirar caso haja algum
+    const selecionado = document.querySelector(".bebida .selecionado");
+    if(selecionado !== null) { 
+        selecionado.classList.remove("selecionado");
+    }
+    //variaveis
+    bebida = nomeBebida;
+    precoBebida = preco
+    //adicionar estilo
+    const selecionar = document.querySelector("#" + classeBebida);
+    selecionar.classList.add("selecionado");
+    //mudar innerhtml caixa de confirmação
+    const item2 = document.querySelector(".item2");
+    item2.innerHTML = nomeBebida;
+    const preco2 = document.querySelector(".preco2");
+    preco2.innerHTML = "R$" + (preco.toFixed(2));
     finalizar();
 }
-
-function EscolherGuarana(){
-    //selecionar
-    document.getElementById("guarana").style.border = "5px solid #32B72F";
-    let icone = document.querySelector("#guarana")
-    icone.classList.add("selecionado")
-    //tirar selecao das outras opcoes
-    document.getElementById("coca").style.border = "5px solid white";
-    icone = document.querySelector("#coca")
-    icone.classList.remove("selecionado")
-    document.getElementById("pepsi").style.border = "5px solid white";
-    icone = document.querySelector("#pepsi")
-    icone.classList.remove("selecionado")
-    //add nome do prato
-    bebida = "Guaraná"
-    //add preço do prato
-    precoBebida = 4.90
-
-    finalizar();
-}
-
-function EscolherPepsi(){
-    //selecionar
-    document.getElementById("pepsi").style.border = "5px solid #32B72F";
-    let icone = document.querySelector("#pepsi")
-    icone.classList.add("selecionado")
-    //tirar selecao das outras opcoes
-    document.getElementById("guarana").style.border = "5px solid white";
-    icone = document.querySelector("#guarana")
-    icone.classList.remove("selecionado")
-    document.getElementById("coca").style.border = "5px solid white";
-    icone = document.querySelector("#coca")
-    icone.classList.remove("selecionado")
-    //add nome do prato
-    bebida = "Pepsi"
-    //add preço do prato
-    precoBebida = 4.50
-
-    finalizar();
-}
-
 
 //Sobremesas
 
-function EscolherPudim(){
-    //selecionar
-    document.getElementById("pudim").style.border = "5px solid #32B72F";
-    let icone = document.querySelector("#pudim")
-    icone.classList.add("selecionado")
-    //tirar selecao das outras opcoes
-    document.getElementById("sundae").style.border = "5px solid white";
-    icone = document.querySelector("#sundae")
-    icone.classList.remove("selecionado")
-    document.getElementById("torta").style.border = "5px solid white";
-    icone = document.querySelector("#torta")
-    icone.classList.remove("selecionado")
-    //add nome do prato
-    sobremesa = "Pudim"
-    //add preço do prato
-    precoSobremesa = 7.90
-
-    finalizar();
-}
-
-
-function EscolherSundae(){
-    //selecionar
-    document.getElementById("sundae").style.border = "5px solid #32B72F";
-    let icone = document.querySelector("#sundae")
-    icone.classList.add("selecionado")
-    //tirar selecao das outras opcoes
-    document.getElementById("pudim").style.border = "5px solid white";
-    icone = document.querySelector("#pudim")
-    icone.classList.remove("selecionado")
-    document.getElementById("torta").style.border = "5px solid white";
-    icone = document.querySelector("#torta")
-    icone.classList.remove("selecionado")
-    //add nome do prato
-    sobremesa = "Sundae"
-    //add preço do prato
-    precoSobremesa = 9.90
-
-    finalizar();
-}
-
-
-function EscolherTorta(){
-    //selecionar
-    document.getElementById("torta").style.border = "5px solid #32B72F";
-    let icone = document.querySelector("#torta")
-    icone.classList.add("selecionado")
-    //tirar selecao das outras opcoes
-    document.getElementById("sundae").style.border = "5px solid white";
-    icone = document.querySelector("#sundae")
-    icone.classList.remove("selecionado")
-    document.getElementById("pudim").style.border = "5px solid white";
-    icone = document.querySelector("#pudim")
-    icone.classList.remove("selecionado")
-    //add nome do prato
-    sobremesa = "Torta de limão"
-    //add preço do prato
-    precoSobremesa = 12.50
-
+function selecionarSobremesa(classeSobremesa, nomeSobremesa, preco){
+    //retirar caso haja algum
+    const selecionado = document.querySelector(".sobremesa .selecionado");
+    if(selecionado !== null) { 
+        selecionado.classList.remove("selecionado");
+    }
+    //variaveis
+    sobremesa = nomeSobremesa;
+    precoSobremesa = preco
+    //adicionar estilo
+    const selecionar = document.querySelector("#" + classeSobremesa);
+    selecionar.classList.add("selecionado");
+    //mudar innerhtml caixa de confirmação
+    const item3 = document.querySelector(".item3");
+    item3.innerHTML = nomeSobremesa;
+    const preco3= document.querySelector(".preco3");
+    preco3.innerHTML = "R$" + (preco.toFixed(2));
     finalizar();
 }
 
 //Confirmação do pedido
 
-
 function Confirmar(){
+    valorTotal = precoPrato + precoBebida + precoSobremesa;
+    const total = document.querySelector(".preco-total");
+    total.innerHTML = "R$" + (valorTotal.toFixed(2))
+    
     document.getElementById("confirmar-pedido").style.display = "flex"
+}
+
+function Finalizar(){
+    let nome = prompt("Digite seu nome")
+    let endereco = prompt("Digite seu endereço")
+
+    let mensagem = "Olá, gostaria de fazer o pedido:  -Prato: " + prato + "  -Bebida: " + bebida + "  -Sobremesa: " + sobremesa + "  Total: R$ " + (valorTotal.toFixed(2)) + "  Nome: " + nome + "  Endereço: " + endereco;
+    window.open("https://wa.me/5561981864151?text=" + encodeURIComponent(mensagem))
 }
 
 function Cancelar(){
