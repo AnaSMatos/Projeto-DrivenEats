@@ -37,7 +37,7 @@ function selecionarPrato(classePrato, nomePrato, preco){
     const item1 = document.querySelector(".item1");
     item1.innerHTML = nomePrato;
     const preco1 = document.querySelector(".preco1");
-    preco1.innerHTML = "R$" + (preco.toFixed(2));
+    preco1.innerHTML = (preco.toFixed(2)).replace('.', ',');
     finalizar();
 }
 
@@ -59,7 +59,7 @@ function selecionarBebida(classeBebida, nomeBebida, preco){
     const item2 = document.querySelector(".item2");
     item2.innerHTML = nomeBebida;
     const preco2 = document.querySelector(".preco2");
-    preco2.innerHTML = "R$" + (preco.toFixed(2));
+    preco2.innerHTML = (preco.toFixed(2)).replace('.', ',');
     finalizar();
 }
 
@@ -81,7 +81,7 @@ function selecionarSobremesa(classeSobremesa, nomeSobremesa, preco){
     const item3 = document.querySelector(".item3");
     item3.innerHTML = nomeSobremesa;
     const preco3= document.querySelector(".preco3");
-    preco3.innerHTML = "R$" + (preco.toFixed(2));
+    preco3.innerHTML = (preco.toFixed(2)).replace('.', ',');
     finalizar();
 }
 
@@ -90,7 +90,7 @@ function selecionarSobremesa(classeSobremesa, nomeSobremesa, preco){
 function Confirmar(){
     valorTotal = precoPrato + precoBebida + precoSobremesa;
     const total = document.querySelector(".preco-total");
-    total.innerHTML = "R$" + (valorTotal.toFixed(2))
+    total.innerHTML = "R$ " + (valorTotal.toFixed(2)).replace('.', ',');
     
     document.getElementById("confirmar-pedido").style.display = "flex"
 }
@@ -99,7 +99,7 @@ function Finalizar(){
     let nome = prompt("Digite seu nome")
     let endereco = prompt("Digite seu endereço")
 
-    let mensagem = "Olá, gostaria de fazer o pedido:  -Prato: " + prato + "  -Bebida: " + bebida + "  -Sobremesa: " + sobremesa + "  Total: R$ " + (valorTotal.toFixed(2)) + "  Nome: " + nome + "  Endereço: " + endereco;
+    let mensagem = "Olá, gostaria de fazer o pedido:  \n-Prato: " + prato + "  \n-Bebida: " + bebida + "  \n-Sobremesa: " + sobremesa + " \n Total: R$ " + (valorTotal.toFixed(2)) + " \n\n Nome: " + nome + " \n Endereço: " + endereco;
     window.open("https://wa.me/5561981864151?text=" + encodeURIComponent(mensagem))
 }
 
